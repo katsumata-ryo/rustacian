@@ -1,0 +1,7 @@
+[package]
+name = "set_ssh_alias"
+version = "0.1.0"
+authors = ["Katsumata Ryo <katsumata@stores.jp>"]
+
+[dependencies]
+yaml-rust = "0.4"
