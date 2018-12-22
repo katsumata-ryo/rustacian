@@ -1,0 +1,8 @@
+[package]
+name = "exif"
+version = "0.1.0"
+authors = ["Katsumata Ryo <katsumata@stores.jp>"]
+edition = "2018"
+
+[dependencies]
+rexiv2 = "0.7.0"
