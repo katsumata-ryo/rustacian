@@ -1,8 +1,10 @@
+use std::env;
 use rexiv2;
 
 fn main() {
-    let file = "/Users/ryo/Downloads/Photos/DSC04117.jpg";
-    let meta = rexiv2::Metadata::new_from_path(&file).unwrap();
+    let args: Vec<String> = env::args().collect();
+    let file_path = &args[1];
+    let meta = rexiv2::Metadata::new_from_path(&file_path).unwrap();
 
     println!("{:?}", meta.get_pixel_width());
     println!("{:?}", meta.get_pixel_height());
