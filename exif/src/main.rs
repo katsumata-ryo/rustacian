@@ -7,10 +7,13 @@ fn main() {
         let meta = rexiv2::Metadata::new_from_path(&argument).unwrap();
 
         println!("[{}]", argument);
-        println!("Width: {:?}", meta.get_pixel_width());
-        println!("Height: {:?}", meta.get_pixel_height());
-        println!("F: {:?}", meta.get_fnumber().unwrap());
-        println!("ISO: {:?}", meta.get_iso_speed().unwrap());
-        println!("Shutter: {:?}/{:?}", meta.get_exposure_time().unwrap().numer(), meta.get_exposure_time().unwrap().denom());
+        println!(
+            "Body: {:?} / Lens: {:?} / F: {:?} / ISO: {:?} / Shutter: {:?}/{:?}",
+            meta.get_tag_string("Exif.Image.Model").unwrap(),
+            meta.get_tag_string("Exif.Photo.LensModel").unwrap(),
+            meta.get_fnumber().unwrap(),
+            meta.get_iso_speed().unwrap(),
+            meta.get_exposure_time().unwrap().numer(), meta.get_exposure_time().unwrap().denom(),
+        );
     }
 }
