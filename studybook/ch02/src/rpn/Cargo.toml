@@ -1,0 +1,11 @@
+[package]
+name = "rpn"
+version = "0.1.0"
+authors = ["Katsumata Ryo <ktmt.ryo@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+
+[[bin]]
+name = "rpn"
+path = "main.rs"
